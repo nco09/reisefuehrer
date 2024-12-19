@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+.reisefuehrer-heading {
+    text-align: center;
+}
+.unserelaender {
+    text-align: center;
+}
+.deutschland, .polen, .tschechien, .holland, .frankreich, .spanien {
+    border-color: blue;
+    border-style: solid;
+    border-width: 3px;
+    margin-right: 1%;
+    margin-left: 1%;
+    height: 15%;
+    width: 30%;
+    text-align: center;
+}
+
+.ersterset, .zweiterset, .dritterset, .vierterset {
+    display: flex;
+}
+
+button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+
+button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    margin-bottom: 5%
+}
+
+button:active {
+    color: #000
+}
+
+button:active:after {
+    background: transparent;
+}
+
+button:hover:before {
+    opacity: 1;
+}
+
+button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+.block {
+    position: relative;
+    margin: 300px auto 0;
+    width: 500px;
+    height: 250px;
+    background: linear-gradient(0deg, #000, #272727);
+    text-align: center;
+    justify-content: center;
+}
+
+.block:before, .block:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+        #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.block:after {
+    filter: blur(50px);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Kanit:600);
+
+.rainbow-text.animated .char {
+    color: white;
+    animation: rainbow-colors 2s linear infinite;
+    animation-delay: calc(-2s * var(--char-percent));
+  }
+  /* Unfortunately, browsers try to take the shortest distance between transition/animation properties, so a simple `0turn` to `1turn` doesn't get the proper effect. */
+  @keyframes rainbow-colors {
+    0% { color: #fb0094; }
+    10% { color: #0000ff; }
+    20% { color: #00ff00; }
+    30% { color: #ffff00; }
+    40% { color: #ff0000; }
+    50% { color: #fb0094; }
+    60% { color: #0000ff; }
+    70% { color: #00ff00; }
+    80% { color: #ffff00; }
+    90% { color: #ff0000; }
+    100% { color: #fb0094; }    
+  }
+
+  a:link {
+    text-decoration: none;
+    color:white
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: white;    
+}
+  
+  a:hover {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:active {
+    text-decoration: none;
+    color:white;
+  }
